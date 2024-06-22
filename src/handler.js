@@ -78,7 +78,7 @@ const showNoteHandler = (request, h) => {
 const editNoteHandler = (request, h) =>{
   const {id} = request.params
   const{title, tags, body} = request.payload
-  const updateAt = new Date().toISOString()
+  const updatedAt = new Date().toISOString()
 
   const index = notes.findIndex(note => note.id == id)
   if(index != -1){
@@ -87,7 +87,7 @@ const editNoteHandler = (request, h) =>{
       title,
       tags,
       body,
-      updateAt
+      updatedAt
     }
 
     const response= h.response({
